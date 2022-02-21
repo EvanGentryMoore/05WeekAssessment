@@ -9,9 +9,9 @@ def sales_reports(log_file): #defining the function sales_report that accepts an
             print(line)#This prints each line from the document that meets the IF statement's condition.
 
 
-sales_reports(log_file)#This is calling the function of sales_report that passes in the variable log_file.
+# sales_reports(log_file)#This is calling the function of sales_report that passes in the variable log_file.
 
-log_file.seek(0)
+# log_file.seek(0)
 
 def sales_reports(log_file):
     for line in log_file:
@@ -20,5 +20,12 @@ def sales_reports(log_file):
         if day == "Mon":
             print(line)
 
+def order_quantity(log_file):
+    for line in log_file:
+        line = line.rstrip().split(' ')
+        order = int(line[2])
+        if order > 10:
+            print(line)
 
-sales_reports(log_file)
+# sales_reports(log_file)
+order_quantity(log_file)
